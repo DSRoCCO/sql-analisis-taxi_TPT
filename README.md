@@ -1,5 +1,4 @@
-
-# Análisis de datos de viajes compartidos
+# Proyecto: Análisis de datos de viajes compartidos
 
 ## Descripción del proyecto
 Estás trabajando como analista para **Zuber**, una nueva empresa de viajes compartidos que se está lanzando en Chicago. Tu tarea es encontrar patrones en la información disponible. Quieres comprender las preferencias de los pasajeros y el impacto de los factores externos en los viajes.
@@ -16,6 +15,19 @@ Tienes dos archivos CSV disponibles:
 2. `/datasets/project_sql_result_04.csv`: Contiene los siguientes datos:
    - `dropoff_location_name`: Barrios de Chicago donde finalizaron los viajes.
    - `average_trips`: Promedio de viajes que terminaron en cada barrio en noviembre de 2017.
+
+---
+
+## Gráficos: Empresas de taxis y número de viajes, los 10 barrios principales por número de finalizaciones
+
+- **Distribución del mercado**:
+  - Flash Cab lidera con un 14.2% del mercado.
+  - Taxi Affiliation Services tiene el 8.3%.
+  - Medallion Leasing alcanza un 7.6%.
+  - El grupo "Others" representa el 27.7%, pero ninguna empresa individual dentro de este grupo supera el 4.3%.
+
+**Conclusión**:  
+Flash Cab es la compañía más utilizada, con casi el doble de viajes en comparación con sus competidores más cercanos.
 
 ---
 
@@ -40,13 +52,13 @@ Tienes dos archivos CSV disponibles:
 - **Hipótesis Nula (H₀)**: Las medias de ambos grupos son iguales, al menos estadísticamente.
 - **Hipótesis Alternativa (H₁)**: Las medias de ambos grupos no son iguales o no son significativamente iguales.
 
-Adicionalmente, los resultados muestran que las varianzas tienen valores muy cercanos, lo que respalda la igualdad asumida en H₀.
+Los resultados respaldan la igualdad de las medias y muestran varianzas muy similares, lo que valida la hipótesis nula.
 
 #### ¿Qué criterio usaste para probar las hipótesis y por qué?
 
-1. **Nivel de significancia**: Se tomó un valor de alpha = `0.05`.
+1. **Nivel de significancia**: Se utilizó un alpha de `0.05`.
 2. **Métodos utilizados**:
-   - **Varianzas**: Se utilizó el método `stats.levene` de la librería `scipy` para calcular el estadístico de Levene y el p-valor, lo que permitió comparar las varianzas de las muestras.
+   - **Varianzas**: Se empleó el método `stats.levene` de la librería `scipy` para calcular el estadístico de Levene y el p-valor, comparando las varianzas de las muestras.
    - **Medias**: Se utilizó el método `ttest.ind` de la librería `scipy`, que calcula el estadístico t y el p-valor para muestras independientes, permitiendo comparar las medias de los dos grupos.
 
 ---
